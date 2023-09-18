@@ -28,6 +28,10 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerMainMenu(): array
     {
         return [
+            Menu::make('Інформаційний лист')
+            ->icon('info') 
+            ->route('platform.info-sheet')
+            /*
             Menu::make('Example screen')
                 ->icon('monitor')
                 ->route('platform.example')
@@ -89,6 +93,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('lock')
                 ->route('platform.systems.roles')
                 ->permission('platform.systems.roles'),
+                */
         ];
     }
 

@@ -5,6 +5,8 @@ declare(strict_types=1);
 use Tabuna\Breadcrumbs\Trail;
 use Illuminate\Support\Facades\Route;
 use App\Orchid\Screens\PlatformScreen;
+use App\Orchid\Screens\PostEditScreen;
+use App\Orchid\Screens\PostListScreen;
 use App\Orchid\Screens\EmailSenderScreen;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
@@ -16,6 +18,7 @@ use App\Orchid\Screens\Examples\ExampleCardsScreen;
 use App\Orchid\Screens\Examples\ExampleChartsScreen;
 use App\Orchid\Screens\Examples\ExampleFieldsScreen;
 use App\Orchid\Screens\Examples\ExampleLayoutsScreen;
+use App\Orchid\Screens\InfoSheet\InfoSheetListScreen;
 use App\Orchid\Screens\Examples\ExampleTextEditorsScreen;
 use App\Orchid\Screens\Examples\ExampleFieldsAdvancedScreen;
 
@@ -31,6 +34,17 @@ use App\Orchid\Screens\Examples\ExampleFieldsAdvancedScreen;
 */
 Route::screen('email', EmailSenderScreen::class)->name('platform.email');
 
+Route::screen('post/{post?}', PostEditScreen::class)
+    ->name('platform.post.edit');
+
+Route::screen('posts', PostListScreen::class)
+    ->name('platform.post.list');
+
+// Info sheet
+Route::screen('info-sheet', InfoSheetListScreen::class)
+    ->name('platform.info-sheet');
+
+//////////////////////////////////////////////////
 // Main
 Route::screen('/main', PlatformScreen::class)
     ->name('platform.main');
