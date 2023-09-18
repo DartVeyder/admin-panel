@@ -2,21 +2,22 @@
 
 declare(strict_types=1);
 
-use App\Orchid\Screens\Examples\ExampleCardsScreen;
-use App\Orchid\Screens\Examples\ExampleChartsScreen;
-use App\Orchid\Screens\Examples\ExampleFieldsAdvancedScreen;
-use App\Orchid\Screens\Examples\ExampleFieldsScreen;
-use App\Orchid\Screens\Examples\ExampleLayoutsScreen;
-use App\Orchid\Screens\Examples\ExampleScreen;
-use App\Orchid\Screens\Examples\ExampleTextEditorsScreen;
+use Tabuna\Breadcrumbs\Trail;
+use Illuminate\Support\Facades\Route;
 use App\Orchid\Screens\PlatformScreen;
+use App\Orchid\Screens\EmailSenderScreen;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
 use App\Orchid\Screens\User\UserEditScreen;
 use App\Orchid\Screens\User\UserListScreen;
+use App\Orchid\Screens\Examples\ExampleScreen;
 use App\Orchid\Screens\User\UserProfileScreen;
-use Illuminate\Support\Facades\Route;
-use Tabuna\Breadcrumbs\Trail;
+use App\Orchid\Screens\Examples\ExampleCardsScreen;
+use App\Orchid\Screens\Examples\ExampleChartsScreen;
+use App\Orchid\Screens\Examples\ExampleFieldsScreen;
+use App\Orchid\Screens\Examples\ExampleLayoutsScreen;
+use App\Orchid\Screens\Examples\ExampleTextEditorsScreen;
+use App\Orchid\Screens\Examples\ExampleFieldsAdvancedScreen;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,7 @@ use Tabuna\Breadcrumbs\Trail;
 | contains the need "dashboard" middleware group. Now create something great!
 |
 */
+Route::screen('email', EmailSenderScreen::class)->name('platform.email');
 
 // Main
 Route::screen('/main', PlatformScreen::class)
